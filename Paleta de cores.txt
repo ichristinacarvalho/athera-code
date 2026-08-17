@@ -1,0 +1,23 @@
+Paleta de Cores da Athera Code
+1. Fundo (Background)
+Fundo Escuro Profundo (Canto Inferior/Sombras): #0A1317
+
+Fundo Azul-Petróleo / Teal Escuro (Médio): #0E232A
+
+Vinho / Ponto de Luz Superior Direito: #14353E
+
+2. Símbolo Fluido (Gradiente & Efeitos Neon)
+Ciano / Turquesa Neon (Ponto principal de brilho): #41EAD4
+
+Menta / Verde-Água Claro: #80FFDB
+
+Roxo / Púrpura Neon (Núcleo e bordas): #A06CD5
+
+Roxo Sombreado / Transição: #6E44FF
+
+3. Tipografia e Elementos Secundários
+Texto Principal / Prata Claro ("Athera Code"): #E2E8F0
+
+Texto Secundário / Prata Médio: #CBD5E1
+
+Brilho Extremo / Ponto de Luz Branco: #FFFFFF
