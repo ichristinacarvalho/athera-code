@@ -1,0 +1,23 @@
+@use 'variaveis' as *;
+
+//Botão padrão
+@mixin btn-padrao($cor-bg, $cor-texto) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    background-color: $cor-bg;
+    color: $cor-texto;
+    font-family: $fonte-destaque;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+//espaçamento seção
+@mixin espacamento-secao($multiplicador: 5) {
+    padding: ($espacamento-base * $multiplicador) 10%;
+}
