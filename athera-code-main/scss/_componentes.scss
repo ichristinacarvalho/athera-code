@@ -1,0 +1,360 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+//CARDS SERVIÇOS
+.card-servico {
+    background: $cor-card-escuro;
+    border: 1px solid $cor-borda-escura;
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: left;
+    transition: 0.3s;
+
+    &__title {
+        color: $cor-ciano;
+        font-family: $fonte-destaque;
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        color: $cor-texto-secundario;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    &:hover {
+        border-color: $cor-ciano;
+        box-shadow: 0 10px 25px rgba(65, 234, 212, 0.1);
+        transform: translateY(-5px);
+    }
+}
+
+//CARDS PROJETOS
+.projeto-card {
+    background: $cor-branco;
+    border: 1px solid $cor-borda-clara;
+    border-radius: 16px;
+    padding: $espacamento-base; // 20px
+    text-align: left;
+    transition: 0.3s;
+
+    &:hover {
+        border-color: $cor-ciano;
+        box-shadow: 0 10px 25px rgba(65, 234, 212, 0.15);
+        transform: translateY(-5px);
+
+        .projeto-card__image {
+            transform: scale(1.02);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    &__title {
+        color: $cor-texto-destaque;
+        font-family: $fonte-destaque;
+        font-size: 1.35rem;
+        margin: $espacamento-base 0 calc($espacamento-base / 2);
+    }
+
+    &__text {
+        color: $cor-texto-escuro-suave;
+        line-height: 1.6;
+        margin-bottom: $espacamento-base;
+    }
+
+    &__links {
+        display: flex;
+        gap: 15px;
+    }
+
+    &__link {
+        color: $cor-texto-destaque;
+        font-family: $fonte-destaque;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $cor-ciano;
+        }
+
+        &--primary {
+            background: $cor-texto-destaque;
+            color: $cor-branco;
+            padding: calc($espacamento-base / 2) 16px; // 10px 16px
+            border-radius: 8px;
+        }
+
+        &--ghost {
+            padding: calc($espacamento-base / 2) 0; // 10px 0
+        }
+    }
+}
+
+//DEPOIMENTOS
+.depoimento {
+    background: $cor-card-escuro;
+    border: 1px solid $cor-borda-escura;
+    border-radius: 16px;
+    padding: ($espacamento-base * 1.5);
+    text-align: left;
+    transition: 0.3s;
+
+    &:hover {
+        border-color: $cor-ciano;
+        box-shadow: 0 10px 25px rgba(65, 234, 212, 0.1);
+        transform: translateY(-5px);
+    }
+
+    &__text {
+        color: $cor-texto-mutado;
+        line-height: 1.6;
+        margin-bottom: $espacamento-base; // 20px
+    }
+
+    &__author {
+        color: $cor-ciano;
+        font-weight: 600;
+    }
+}
+
+//FORMULÁRIO DE CCNTATO
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__label {
+        color: $cor-texto-escuro;
+        font-family: $fonte-destaque;
+        font-weight: 600;
+        margin-top: calc($espacamento-base / 2);
+    }
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        padding: 12px 14px;
+        background: $cor-branco;
+        border: 1px solid $cor-texto-mutado;
+        border-radius: 8px;
+        font-family: $fonte-padrao;
+        font-size: 1rem;
+        outline: none;
+        transition: 0.3s;
+
+        &:focus {
+            border-color: $cor-ciano;
+            box-shadow: 0 0 0 3px rgba(65, 234, 212, 0.12);
+        }
+    }
+
+    &__textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    &__btn {
+        @include btn-padrao($cor-texto-destaque, $cor-branco);
+        align-self: flex-start;
+        margin-top: 15px;
+
+        &:hover {
+            background-color: $cor-bg-secundario;
+            color: $cor-ciano;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+//PARTICULAS E ANIMAÇÃO
+.particulas {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particula {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: $cor-ciano;
+    box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+    border-radius: 50%;
+    top: 30%;
+    left: 20%;
+    animation: flutuar 5s infinite alternate;
+
+    &:nth-child(2) {
+        background: $cor-roxo;
+        box-shadow: 0 0 10px rgba(160, 108, 213, 0.6);
+        width: 5px;
+        height: 5px;
+        top: 60%;
+        left: 30%;
+        animation-duration: 8s;
+        animation-name: flutuar-esquerda;
+    }
+
+    &:nth-child(3) {
+        background: $cor-branco;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+        width: 10px;
+        height: 10px;
+        top: 40%;
+        left: 70%;
+        animation-duration: 12s;
+        animation-name: flutuar-baixo;
+    }
+
+    &:nth-child(4) {
+        background: $cor-ciano-hover;
+        box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+        width: 4px;
+        height: 4px;
+        top: 80%;
+        left: 50%;
+        animation-duration: 6s;
+        animation-name: flutuar-cima-esquerda;
+    }
+
+    &:nth-child(5) {
+        background: $cor-roxo-forte;
+        box-shadow: 0 0 12px rgba(110, 68, 255, 0.6);
+        width: 7px;
+        height: 7px;
+        top: 20%;
+        left: 10%;
+        animation-duration: 17s;
+        animation-name: flutuar;
+    }
+
+    &:nth-child(6) {
+        background: $cor-ciano;
+        box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+        width: 3px;
+        height: 3px;
+        top: 50%;
+        left: 60%;
+        animation-duration: 5s;
+        animation-name: flutuar-esquerda;
+    }
+
+    &:nth-child(7) {
+        background: $cor-roxo;
+        box-shadow: 0 0 12px rgba(160, 108, 213, 0.6);
+        width: 9px;
+        height: 9px;
+        top: 80%;
+        left: 40%;
+        animation-duration: 8s;
+        animation-name: flutuar-baixo;
+    }
+
+    &:nth-child(8) {
+        background: $cor-texto-claro;
+        box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+        width: 3px;
+        height: 3px;
+        top: 90%;
+        left: 70%;
+        animation-duration: 6s;
+        animation-name: flutuar-cima-esquerda;
+    }
+
+    &:nth-child(9) {
+        background: $cor-ciano-hover;
+        box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+        width: 4px;
+        height: 4px;
+        top: 10%;
+        left: 80%;
+        animation-duration: 6s;
+        animation-name: flutuar-cima-esquerda;
+    }
+
+    &:nth-child(10) {
+        background: $cor-roxo-forte;
+        box-shadow: 0 0 8px rgba(234, 65, 212, 0.5);
+        width: 7px;
+        height: 7px;
+        top: 30%;
+        left: 30%;
+        animation-duration: 17s;
+        animation-name: flutuar;
+    }
+
+    &:nth-child(11) {
+        background: $cor-ciano;
+        box-shadow: 0 0 8px rgba(65, 234, 212, 0.5);
+        width: 6px;
+        height: 6px;
+        top: 15%;
+        left: 55%;
+        animation-duration: 9s;
+        animation-name: flutuar-esquerda;
+    }
+
+    &:nth-child(12) {
+        background: $cor-roxo;
+        box-shadow: 0 0 10px rgba(160, 108, 213, 0.6);
+        width: 5px;
+        height: 5px;
+        top: 65%;
+        left: 85%;
+        animation-duration: 11s;
+        animation-name: flutuar;
+    }
+}
+
+// ANIMAÇÕES (@keyframes)
+@keyframes flutuar {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, -50px);
+    }
+}
+
+@keyframes flutuar-esquerda {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100px, -50px);
+    }
+}
+
+@keyframes flutuar-baixo {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(120px, 80px);
+    }
+}
+
+@keyframes flutuar-cima-esquerda {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-70px, -80px);
+    }
+}
