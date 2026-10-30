@@ -15,6 +15,7 @@ O projeto foi construído utilizando as seguintes tecnologias:
 * **CSS3:** Estilização moderna, animações suaves, layout flexível e responsividade.
 * **JavaScript (ES6+):** Lógica interativa, manipulação do DOM e componentes dinâmicos.
 * **Git & GitHub:** Controle de versão e hospedagem do código.
+* **Firebase (Firestore / Realtime Database)**: Backend-as-a-Service utilizado para gerenciar e salvar os dados do formulário de contato.
 
 ---
 
